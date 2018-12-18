@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.workshopspringbootmongodb.domain.User;
 import com.github.workshopspringbootmongodb.domain.repository.UserRepository;
+import com.github.workshopspringbootmongodb.domain.service.exception.ObjectNotFoundException;
 
 
 
@@ -20,4 +21,10 @@ public class UserService {
 	public List<User> findAll() {
 		return repo.findAll();
 	}
+	
+	public User findById(String id) {
+		Optional<User> obj = repo.findById(id);
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+		}
+	
 }
