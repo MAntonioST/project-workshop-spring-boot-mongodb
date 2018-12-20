@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.github.workshopspringbootmongodb.dto.AuthorDTO;
@@ -19,6 +20,8 @@ public class Post implements Serializable {
 	public String title;
 	public String body;
 	public AuthorDTO author;
+	
+	
 	
 	public Post() {		
 	}
@@ -74,6 +77,8 @@ public class Post implements Serializable {
 	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
